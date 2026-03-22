@@ -92,6 +92,13 @@ g++ Bank Management System.cpp -o bank
 
 ---
 
+## 🎥 *Live Demo* *(YouTube)*
+
+👉 Watch the full working demo here:
+🔗 https://youtu.be/sH3XPfmatpU?si=t01D9FcmfKSGBIWs
+
+---
+
 ## ⚠️ Important Notes
 
 * Minimum ₹500 required to create account
@@ -105,13 +112,15 @@ g++ Bank Management System.cpp -o bank
 ## 👨‍💻 Author
 
 **Shivam Maurya**
+<br>
 B.Tech CSE Student
 
 ---
 
 ## ⭐ Support
 
-If you like this project, give it a ⭐ on GitHub and feel free to improve it!
+If you like this project, give it a
+⭐ on GitHub and feel free to improve it!
 
 ---
 
