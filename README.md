@@ -92,8 +92,15 @@ g++ Bank Management System.cpp -o program
 
 ### 📌 Project 1 Output
 
+
 <p align="center">
-  <img src="https://via.placeholder.com/600x300?text=Project+Output+1" width="70%"/>
+  <img src="Bank Management System/images/output1.png" width="45%" alt="Account Creation"/>
+  <img src="Bank Management System/images/output2.png" width="45%" alt="Account Creation"/>
+</p>
+
+<p align="center">
+  <img src="Bank Management System/images/output3.png" width="45%" alt="Login"/>
+  <img src="Bank Management System/images/output4.png" width="45%" alt="Transactions"/>
 </p>
 
 ### 📌 Project 2 Output (Coming Soon)
