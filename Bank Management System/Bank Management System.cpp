@@ -114,6 +114,10 @@ class CreateAccount {
 		double getBalance(){
 			return balance;
 		}
+		
+		void updateBalance(double newBalance){
+        balance = newBalance;
+    }
 	
 };
 
@@ -125,7 +129,7 @@ class Login{
 	int acc;
 	int pass;
 
-	void getInfo(CreateAccount &check){
+	bool getInfo(CreateAccount &check){
 		cout<<"Enter Your Correct Account Number : ";
 		cin>>acc;
 		cout<<endl;
@@ -137,9 +141,12 @@ class Login{
 		if(acc==check.getAccInfo() &&pass == check.getPassInfo() ){
 			cout<<"YOUR ACCOUNT NO. AND PASSWORD IS CORRECT"<<endl;
 			cout<<endl;
+			return true;
+			
 		}
 		else{
 			cout<<"YOUR ACCOUNT NO. AND PASSWORD IS NOT CORRECT"<<endl;
+			return false;
 			cout<<endl;
 		}
 
@@ -148,13 +155,14 @@ class Login{
 
 };
 
-class Deposit : public CreateAccount{
+class Deposit{
 	public:
 	double depo;
 	void inputCash(CreateAccount& ba){
 		cout<<"Enter the Amount To deposit your Money :";
 		cin>>depo;
-		depo+=ba.getBalance();
+		double newBal = ba.getBalance() + depo;
+		ba.updateBalance(newBal);
 		// here I am using Balance In protected So by this I can Use the Balance In derived class. In Private I can be Used Balance into Derived Class.
 		cout<<endl;
 		cout<<"To Show Balance Go To Menu, Then Choose Check Balance"<<endl;
@@ -170,10 +178,18 @@ class Deposit : public CreateAccount{
 class WithDraw{
 public:
 void cash(CreateAccount& wd){
-	int amt;
+	double amt;
 	cout<<"Enter the WithDraw Amount : ";
 	cin>>amt;
-	amt-=wd.getBalance();
+	
+	if(amt > wd.getBalance()){
+        cout<<"Insufficient Balance!\n";
+    }
+	else{
+        double newBal = wd.getBalance() - amt;
+        wd.updateBalance(newBal);
+        cout<<"Withdraw Successful!\n";
+     }
 	
 	
 
@@ -181,11 +197,11 @@ void cash(CreateAccount& wd){
 };
 
 
-class Balance: public Deposit{
+class Balance {
 	public:
-	void bal(Deposit& de){
-		cout<<"Here Is Your Total Balance : "<<de.getDeposit()<<endl;
-	}
+	void bal(CreateAccount& ac){
+    cout<<"Here Is Your Total Balance : "<<ac.getBalance()<<endl;
+}
 };
 
 
@@ -201,6 +217,9 @@ int main(){
 	Deposit d;
 	Balance bb;
 	WithDraw cc;
+	
+	
+	bool isLogin = false;
 
 	// log.getInfo(a);
 	
@@ -226,6 +245,8 @@ int main(){
 		cout<<"6. Check Balance"<<endl;
 		cout<<"7. Logout"<<endl;
 		cout<<"8. Exit\n\n"<<endl;
+		
+		
 
 		cout<<"...Choose the Number..."<<endl;
 		cin>>b;
@@ -238,20 +259,44 @@ int main(){
 			/* code */
 			break;
 
-		case 2: log.getInfo(a);
+		case 2: isLogin=log.getInfo(a);
 		break;
 
-		case 3:a.getInfo();
+		case 3:if(isLogin) {
+			a.getInfo();
+		}
+		else {
+		cout<<"Please Login First!\n";	
+		}
+		break;
+		
+
+		case 4:if(isLogin){
+			d.inputCash(a);
+		} 
+		else {
+			cout<<"Please Login First!"<<endl;
+		}
 		break;
 
-		case 4:d.inputCash(a);
+		case 5:if(isLogin){
+			cc.cash(a);
+		} 
+		else{
+			cout<<"Please Login First!"<<endl;
+		}
 		break;
 
-		case 5:cc.cash(a);
-		break;
-
-		case 6:bb.bal(d);
+		case 6:if(isLogin){
+			 bb.bal(a);
+		}else {
+			cout<<"Please Login First!"<<endl;
+		}
 		break;// break lagana mat bulna warna program end after the 6 option execute.
+		
+		case 7:isLogin = false;
+		cout<<"Logged Out!"<<endl;
+		break;
 		
 		case 8: 
 		cout<<"THANK YOU FOR VISITING....";
