@@ -42,8 +42,14 @@ CPP_OOPS_PROJECTS/
 │   ├── Bank Management System.exe
 │   └── other_files...
 │
-├── Project_2/ (Coming Soon 🚀)
+├── PhoneBook/  
+├   ├── Phone_Book_Management_System.cpp
+│   ├── Phone_Book_Management_System.exe
+│   └── other_files... 
+│
+├
 ├── Project_3/ (Coming Soon 🚀)
+├── Project_4/ (Coming Soon 🚀)
 │
 └── More Projects...
 
@@ -104,6 +110,18 @@ g++ Bank Management System.cpp -o program
 </p>
 
 ### 📌 Project 2 Output (Coming Soon)
+
+<p align="center">
+  <img src="Phone Book Management System/images/output1.png" width="45%" alt="Account Creation"/>
+  <img src="Phone Book Management System/images/output2.png" width="45%" alt="Account Creation"/>
+</p>
+
+<p align="center">
+  <img src="Phone Book Management System/images/output3.png" width="45%" alt="Login"/>
+  <img src="Phone Book Management System/images/output4.png" width="45%" alt="Transactions"/>
+</p>
+
+### 📌 Project 3 Output (Coming Soon)
 
 <p align="center">
   <img src="https://via.placeholder.com/600x300?text=Coming+Soon" width="70%"/>
