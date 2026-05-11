@@ -310,8 +310,8 @@ Contributions and suggestions are welcome.
 # 👨‍💻 Author
 
 <p align="center">
-  <b>Your Name</b><br>
-  🎓 CSE Student<br>
+  <b>Shivam Maurya</b>
+  <br>CSE Student<br>
   💻 Passionate C++ Developer 🚀
 </p>
 
